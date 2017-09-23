@@ -1,14 +1,16 @@
 const path = require('path');
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    javascript: "./src/js/app.jsx",
+  },
   output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    path: __dirname,
+    filename: './dist/bundle.js'
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/, query: { presets: [ 'es2015', 'react' ]},
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/, query: { presets: [ 'es2015', 'react' ] }
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/, query: { presets: [ 'es2015', 'react' ]}},
+      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/, query: { presets: [ 'es2015', 'react' ]}}
     ]
   }
 }
