@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --debug"
+    "build": "webpack --debug",
+    "start": "webpack-dev-server",
+    "eject": "react-scripts eject"
   },
   "keywords": [
     "React",
@@ -19,6 +21,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
+    "react-scripts": "^1.0.13",
     "redux": "^3.7.2",
     "webpack": "^3.6.0"
   },
