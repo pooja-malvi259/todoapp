@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Todos from './container.jsx';
+import Main from './container.jsx';
 
 
 render(
-  <Todos/>,
+  <Main/>,
   document.getElementById('app')
 );
 

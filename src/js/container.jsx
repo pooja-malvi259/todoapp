@@ -3,17 +3,35 @@ import render from 'react-dom';
 import TodoItem from './components/Todo.jsx';
 import TodoList from './components/TodoList.jsx';
 
-const Todos = React.createClass({
+const Main = React.createClass({
 getInitialState: function() {
-    return {todos:
-      [ 
-        { id: 0, isDone: true,  text: 'make components' },
-        { id: 1, isDone: false, text: 'design actions' },
-        { id: 2, isDone: false, text: 'implement reducer' },
-        { id: 3, isDone: false, text: 'connect components' }
-    ]};
+    return {
+      todos:[ 
+              { index: 0, 
+                isDone: true,  
+                text: 'Make components' 
+              },
+              { index: 1, 
+                isDone: false, 
+                text: 'Design actions' 
+              },
+              { index: 2, 
+                isDone: false, 
+                text: 'Implement reducer' 
+              },
+              { index: 3, 
+                isDone: false, 
+                text: 'Connect components' 
+              }
+            ]
+    };
   },
   render: function () {
+    var Todo = this.state.todos.map(function(val,index) {
+         return(
+            <TodoList key={index} index={index} val={val}/>
+         )
+      }.bind(this));
     return(
       <div className="container">
         <div className="jumbotron">
@@ -23,9 +41,18 @@ getInitialState: function() {
           </div>
           <button type="button" className="btn-lg btn-primary">Add</button>
         </div>
+        <h3> Things to be done today:</h3>
+        <div className="todo-box">
+          { Todo }
+        </div>
+        <div>
+          <button type="button" className="btn btn-default">All</button>
+          <button type="button" className="btn btn-default">Done</button>
+          <button type="button" className="btn btn-default">Not Done</button>
+        </div>
       </div>
       );
   }
 });
 
-export default Todos;
+export default Main;
