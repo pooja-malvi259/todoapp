@@ -1,20 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Link = ({ active, children, onClick }) => {
+const LinkItem = ({ active, children, onClick }) => {
   if (active) {
     return <span>{children}</span>
-  }
+  };
 
   return (
-    <a href="#" onClick={ e => { e.preventDefault() onClick() }}> { children } </a>
+  	<button type="button" className="btn btn-default" onClick={ e => { e.preventDefault(); onClick(); }}>{ children }</button>
   )
-}
+};
 
-Link.propTypes = {
+LinkItem.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired
-}
+};
 
-export default Link
+export default LinkItem;

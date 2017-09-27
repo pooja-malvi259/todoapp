@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import TodoItem from './Todo.jsx';
+
 
 const TodoList = ({ todos, onTodoClick }) => (
 	<div className="form-check">
@@ -11,7 +12,6 @@ const TodoList = ({ todos, onTodoClick }) => (
 			</label>
 	</div>
 	);
-
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
