@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const TodoItem = ({ onClick, isDone, text }) => (
 	<div>
 		<label className="form-check-label">
-			<input className="form-check-input margin-box" type="checkbox" onClick={onClick}/>
+			<input className="form-check-input margin-box" type="checkbox" onClick={onClick} checked={isDone} />
 	    	<span style={ {textDecoration: isDone ? 'line-through' : 'none'}}>{ text }</span>
 	    </label>
     </div>
