@@ -19,7 +19,7 @@ let AddTodo = ({ dispatch }) => {
         }}
       >
       <div className="form-group">
-        <input type="text" className="form-control" placeholder="Add your to-do Thingy" ref={node => { input = node }}/>
+        <input type="text" className="form-control" placeholder="Add your to-do Thingy" ref={ node => { input = node }}/>
       </div>
       <button type="submit" className="btn-lg btn-primary">Add</button>
       </form>
