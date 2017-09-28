@@ -5,9 +5,9 @@ import TodoItem from './Todo.jsx';
 
 const TodoList = ({ todos, onTodoClick }) => (
 	<div className="form-check">			
-			{ todos.map((todo, index) => {console.log(todo); return (
+			{ todos.map((todo, index) => (
       			<TodoItem key={todo.id} {...todo} onClick={() => onTodoClick(index)} />
-    		);})}
+    		))}
 	</div>
 	);
 
