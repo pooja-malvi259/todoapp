@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 const TodoItem = ({ onClick, isDone, text }) => (
 	<div>
-		<input className="form-check-input margin-box" type="checkbox" value=""  />
-	  	<p style={{ textDecoration: isDone ? 'line-through' : 'none' }} onClick={ onClick } >
-	    	{ text }
-	    </p>
+		<label className="form-check-label">
+			<input className="form-check-input margin-box" type="checkbox" onClick={onClick}/>
+	    	<span style={ {textDecoration: isDone ? 'line-through' : 'none'}}>{ text }</span>
+	    </label>
     </div>
 );
 
@@ -15,6 +15,5 @@ TodoItem.propTypes = {
   isDone: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
-
 
 export default TodoItem;

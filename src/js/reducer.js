@@ -22,10 +22,11 @@ function todos(state = [], action) {
       return [
         ...state,
         {
+          id:action.id,
           text: action.text,
           isDone: false
         }
-      ]
+      ];break;
     case TOGGLE_TODO:
       return state.map((todo, index) => {
         if (index === action.index) {
@@ -33,10 +34,12 @@ function todos(state = [], action) {
             isDone: !todo.isDone
           })
         }
-        return todo
-      })
+        else{
+          return todo;
+        }
+      }); break;
     default:
-      return state
+      return state;
   }
 }
 

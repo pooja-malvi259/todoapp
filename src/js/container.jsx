@@ -22,6 +22,7 @@ getInitialState: function() {
       </div>
       );
   }
+  
 });
 
 export default Main;

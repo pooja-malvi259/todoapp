@@ -4,12 +4,10 @@ import TodoItem from './Todo.jsx';
 
 
 const TodoList = ({ todos, onTodoClick }) => (
-	<div className="form-check">
-			<label className="form-check-label">
-			{ todos.map(todo => (
-      			<TodoItem key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
-    		))}
-			</label>
+	<div className="form-check">			
+			{ todos.map((todo, index) => {console.log(todo); return (
+      			<TodoItem key={todo.id} {...todo} onClick={() => onTodoClick(index)} />
+    		);})}
 	</div>
 	);
 
@@ -23,6 +21,5 @@ TodoList.propTypes = {
   ).isRequired,
   onTodoClick: PropTypes.func.isRequired
 }
-
 
 export default TodoList;

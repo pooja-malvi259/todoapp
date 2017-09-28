@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const LinkItem = ({ active, children, onClick }) => {
   if (active) {
-    return <span>{children}</span>
+    return <button type="button" className="btn btn-default">{children}</button>
   };
 
   return (
